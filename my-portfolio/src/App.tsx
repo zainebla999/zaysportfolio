@@ -1,7 +1,9 @@
-import { useState } from "react";
 import "./App.css";
+import Footer from "./Footer.tsx";
+import About from "./About.tsx";
+import Projects from "./Projects.tsx";
 import mainDoodle from "./assets/DoodleMain (1).png";
-import aboutDoodle from "./assets/aboutDoodle.png";
+import journeyDoodle from "./assets/3rdDoodle.png";
 
 function App() {
   // const [openIndex, setOpenIndex] = useState(-1);
@@ -11,18 +13,27 @@ function App() {
       <div className="mainContainer w-full h-screen flex flex-col">
         <div className="navSection w-full sticky top-0 right-0 left-0 p-3 bg-[#CCDCDB]">
           <nav className="text-right  ">
-            <button className=" rounded-full bg-transparent text-[#849594]">
-              Home
-            </button>
-            <button className=" rounded-full bg-transparent text-[#849594]">
-              About
-            </button>
-            <button className=" rounded-full bg-transparent text-[#849594]">
-              Projects
-            </button>
+            <a href="#heroContainer">
+              <button className=" rounded-full bg-transparent text-[#849594]">
+                Home
+              </button>
+            </a>
+            <a href="#aboutSection">
+              <button className=" rounded-full bg-transparent text-[#849594]">
+                About
+              </button>
+            </a>
+            <a href="#projectsSection">
+              <button className=" rounded-full bg-transparent text-[#849594]">
+                Projects
+              </button>
+            </a>
           </nav>
         </div>
-        <div className="heroSection flex flex-1 items-center justify-center bg-[#CCDCDB]">
+        <div
+          id="heroContainer"
+          className="heroSection flex flex-1 items-center justify-center bg-[#CCDCDB]"
+        >
           <div className="heroContainer text-center text-black leading-8">
             <div className=" w-auto overflow-hidden center">
               <img className="h-52 mx-auto" src={mainDoodle} alt="" />
@@ -37,93 +48,84 @@ function App() {
         </div>
       </div>
 
-      <div className="aboutSection flex flex-row">
-        <div className="aboutLeft flex-2">
-          <h2>ABOUT ME</h2>
-          <br></br>
-          <br></br>
-          <p>
-            I've always been drawn to problem-solving, which sparked my interest
-            in networking and eventually led me to cybersecurity. Self-learning
-            has been a big part of my journey. <br></br>
-            <br></br>To impress recruiters, I tried filming a video and the
-            marketing team took me on board. That's when I first held a
-            professional camera. I got so excited about my first marketing
-            project that I spent a whole week learning from YouTube. I
-            challenged myself to learn OOP, and funny enough, I only really
-            understood it after the course was over. Troubleshooting might take
-            days, but when things finally work, I feel like an engineer.
-            Somehow, I've always just gotten assembly language and even enjoyed
-            it (yeah, weird, I know.)<br></br> <br></br>These days, I'm building
-            interfaces, creating visual content, and figuring out how to make
-            tech work better for people. Whether I'm coding, designing, or
-            behind a camera, I'm just here to learn, build, and solve problems.
-          </p>
+      <About />
+      <h2>JOURNEY</h2>
+      <div className="journey flex flex-row h-full items-center  py-9">
+        <div className="jDoodle flex-1">
+          <img src={journeyDoodle} alt="" className="h-3/4 mx-auto" />
         </div>
-        <div className="aboutRight flex-1 content-center ">
-          <img src={aboutDoodle} className="h-80 block  m-auto" alt="" />
+        <div className="journeyContent flex-2 p-2 ">
+          <div className="experienceHolder flex flex-col gap-6 py-6 ">
+            <div className="experience1 expBox flex flex-row gap-6">
+              <div className="duration1">
+                <p>Jul 2025 – Sep 2025</p>
+              </div>
+              <div className="exDesc">
+                <h3>Operations Intern — Ibtechar</h3>
+                <p>Systems & Documentation Design</p>
+              </div>
+            </div>
+
+            <div className="experience2 expBox flex flex-row gap-6">
+              <div className="duration2">
+                <p>Feb 2025 – Jun 2025</p>
+              </div>
+              <div className="exDesc">
+                <h3>
+                  Information Systems Intern — Ministry of Communications and
+                  Information Technology
+                </h3>
+                <p>Business Automation & Power Platform Development</p>
+              </div>
+            </div>
+
+            <div className="experience3 expBox flex flex-row gap-6">
+              <div className="duration3">
+                <p>May 2024 – Jul 2024</p>
+              </div>
+              <div className="exDesc">
+                <h3>Information Security Intern — CWallet</h3>
+                <p>Security Testing & Risk Analysis</p>
+              </div>
+            </div>
+
+            <div className="experience4 expBox flex flex-row gap-6">
+              <div className="duration4">
+                <p>Jul 2023 – Aug 2023</p>
+              </div>
+              <div className="exDesc">
+                <h3>Web Developer Intern — Bin Yousef</h3>
+                <p>Web Development & UI Styling</p>
+              </div>
+            </div>
+
+            <div className="experience5 expBox flex flex-row gap-6">
+              <div className="duration5">
+                <p>Jun 2023 – Feb 2024</p>
+              </div>
+              <div className="exDesc">
+                <h3>
+                  Marketing Assistant — University of Doha for Science &
+                  Technology
+                </h3>
+                <p>Video & Photography Production</p>
+              </div>
+            </div>
+
+            <div className="experience6 expBox flex flex-row gap-6">
+              <div className="duration6">
+                <p>Nov 2022 – Dec 2022</p>
+              </div>
+              <div className="exDesc">
+                <h3>Commentary Assistant — Host Broadcast Services</h3>
+                <p>FIFA World Cup | Technical Support & Event Operations</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="projectsSection w-full">
-        <br></br>
-        <br></br>
-        <h2>SELECTED WORK</h2>
-        <br></br>
-        <div className="projectsButton flex flex-row justify-center">
-          <button>Web Development</button>
-          <button>Media Work</button>
-        </div>
-      </div>
-
-      <div className="footer py-8 flex flex-col justify-between items-center border-t-4 border-red-600">
-        <div className="icon-row flex flex-row">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="currentColor"
-          >
-            <path d="M7.803 5.731c.589 0 1.119.051 1.605.155q.723.155 1.243.508q.515.352.804.939c.187.387.28.871.28 1.443q0 .93-.421 1.551q-.423.622-1.256 1.015q1.134.33 1.69 1.146c.374.549.557 1.206.557 1.976q0 .937-.358 1.613a3.1 3.1 0 0 1-.974 1.114a4.3 4.3 0 0 1-1.399.64a6.3 6.3 0 0 1-1.609.206H2V5.731zm-.351 4.972q.72 0 1.192-.345c.312-.228.463-.604.463-1.119q0-.43-.151-.707a1.1 1.1 0 0 0-.417-.428a1.7 1.7 0 0 0-.597-.215a3.6 3.6 0 0 0-.697-.061H4.71v2.875zm.151 5.239c.267 0 .521-.023.76-.077c.241-.052.455-.136.637-.261c.182-.12.332-.283.44-.491c.109-.206.162-.475.162-.798q-.001-.95-.533-1.358c-.355-.27-.831-.404-1.414-.404H4.71v3.39h2.893zm8.565-.041q.551.538 1.584.538q.74 0 1.278-.373c.354-.249.57-.515.653-.79h2.155c-.346 1.072-.871 1.838-1.589 2.299c-.709.463-1.572.693-2.58.693q-1.052 0-1.9-.337a4 4 0 0 1-1.439-.958a4.4 4.4 0 0 1-.905-1.485a5.4 5.4 0 0 1-.32-1.899q.001-1 .329-1.864a4.4 4.4 0 0 1 .934-1.493q.606-.63 1.444-.994a4.6 4.6 0 0 1 1.858-.362q1.13 0 1.979.44a4 4 0 0 1 1.39 1.182q.543.74.783 1.691q.24.947.171 1.983h-6.431c.001.704.238 1.371.606 1.729m2.812-4.681c-.291-.322-.783-.496-1.385-.496q-.585-.001-.974.199a2 2 0 0 0-.62.491a1.8 1.8 0 0 0-.328.628a3 3 0 0 0-.111.587h3.982c-.058-.624-.272-1.085-.564-1.409m-3.918-4.663h4.989v1.215h-4.989z" />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="currentColor"
-          >
-            <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248a4.623 4.623 0 0 0 0-9.248m0 7.627a3.004 3.004 0 1 1 0-6.008a3.004 3.004 0 0 1 0 6.008" />
-            <circle cx="16.806" cy="7.207" r="1.078" />
-            <path d="M20.533 6.111A4.6 4.6 0 0 0 17.9 3.479a6.6 6.6 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.6 6.6 0 0 0-2.184.42a4.6 4.6 0 0 0-2.633 2.632a6.6 6.6 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71s0 2.753.056 3.71c.015.748.156 1.486.419 2.187a4.6 4.6 0 0 0 2.634 2.632a6.6 6.6 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.6 6.6 0 0 0 2.186-.419a4.6 4.6 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186c.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.6 6.6 0 0 0-.421-2.217m-1.218 9.532a5 5 0 0 1-.311 1.688a3 3 0 0 1-1.712 1.711a5 5 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055c-2.438 0-2.687 0-3.655-.055a5 5 0 0 1-1.669-.311a3 3 0 0 1-1.719-1.711a5.1 5.1 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654s0-2.686.053-3.655a5 5 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5 5 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a5 5 0 0 1 1.67.311a3 3 0 0 1 1.712 1.712a5.1 5.1 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655s0 2.698-.043 3.654z" />
-          </svg>
-
-          {/* <!-- Linkedin --> */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="currentColor"
-            className="opacity-100"
-          >
-            <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1M8.339 18.337H5.667v-8.59h2.672zM7.003 8.574a1.548 1.548 0 1 1 0-3.096a1.548 1.548 0 0 1 0 3.096m11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277c-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387c2.704 0 3.203 1.778 3.203 4.092v4.71z" />
-          </svg>
-
-          {/*mail */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="currentColor"
-          >
-            <path d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64" />
-          </svg>
-        </div>
-        <p>Hand-drawn illustrations by me using the S22 Ultra S Pen </p>
-      </div>
+      <Projects />
+      <Footer />
     </div>
   );
 }
